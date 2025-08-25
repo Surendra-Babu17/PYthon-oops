@@ -1,0 +1,133 @@
+''' 🔰3.INHERITANCE IN OOPS
+
+
+What is inheritance?
+✅ Interview Definition:
+Inheritance is the process where one class acquires the attributes and methods of another class.
+It supports hierarchical relationships between classes.
+
+Types of Inheritance in Python:
+Single Inheritance
+
+Multiple Inheritance
+
+Multilevel Inheritance
+
+Hierarchical Inheritance
+
+Hybrid Inheritance 
+
+          
+'''
+#Single Inheritance
+
+'''one parent class and one child class is denotes SINGLE INHERITANCE'''
+class parent():         # creating parent class
+    def output(self):    # constructor
+        print("i am the parent") 
+class child(parent):             #creating child class
+    def outputc(self):
+        print("i am the child")  
+a=child()
+a.output()
+a.outputc()  
+
+#example-1
+class car():
+    def name(self):
+        print("i am the car")
+class car_color(car):
+    def color(self):
+        print("my car color is red") 
+c=car_color()
+c.name()
+c.color() 
+
+
+#example 2 using constructor:
+class Vehicle:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def display_info(self):
+        print(f"Vehicle Brand: {self.brand}")
+        print(f"Vehicle Model: {self.model}")
+
+class Car(Vehicle):
+    def __init__(self,color,model,brand):
+        super().__init__(brand,model)
+        self.color=color
+    def details(self):
+        print(f"color of car {self.color} ")
+
+# Creating an object of Car
+car = Car("red", "Camry", 4)
+car.display_info()
+car.details()
+
+'''What is surper()?
+super() → Used to call parent class methods/constructors in child class.
+'''
+
+
+
+#2.Multilevel inheritance
+'''👉  two parent classes one child class is known as multilevel inheritance''' 
+class father():    # creating parent1 class
+    def outputf(self):
+        print("i am the father of the family") 
+class mother(father):   # creating parent2 class
+    def outputm(self):
+        print("i am the mother of the family")  
+class son_daughter(mother):
+    def output_sd(self):
+        print("i am the child of this family")
+acess=son_daughter()
+acess.outputm()
+acess.outputf()
+acess.output_sd()   
+
+
+#3.MULTIPLE INHERITANCE 
+'''👉 two parent classes one child class is known as multilevel inheritance''' 
+class father():    # creating parent1 class
+    def outputf(self):
+        print("i am the father of the family") 
+class mother(father):   # creating parent2 class
+    def outputm(self):
+        print("i am the mother of the family")  
+class son_daughter(father,mother):
+    def output_sd(self):
+        print("i am the child of this family")
+acess=son_daughter()
+acess.outputm()
+acess.outputf()
+acess.output_sd()    
+
+#4.Herarical Inheritance''' 
+'''👉 one parent class multiple child classes''' 
+class father_mother():
+    def father_mother(self):
+        print("we both are wife and husbands")
+class child1(father_mother):
+    def output(self):
+        print("i am the older child and first perosn in my family")
+class child2(father_mother):
+    def child2(self):
+        print("i am the older child and first perosn in my family")
+class child3(father_mother):
+    def child3(self):
+        print("i am the older child and first perosn in my family")
+
+class child4(father_mother):
+    def child4(self):
+        print("i am the older child and first perosn in my family") 
+acess1=child1()
+acess2=child2()
+acess3=child3()
+acess4=child4()
+acess1.output()
+acess1.father_mother()
+acess2.child2()  
+
