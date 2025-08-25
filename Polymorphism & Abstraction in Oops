@@ -1,0 +1,59 @@
+'''4.POLYMORPHISM IN OOPS
+👉 Polymorphism means multiple forms.
+It can be achieved through method overriding or overloading.
+Method Overloading
+
+Method Overriding
+
+Operator Overloading
+
+
+'''
+#Method of overloding.
+class math:
+    def add(self,a,b=0,c=0):
+        return a+b+c 
+m=math()
+print(m.add(2,3,8))
+
+'''
+Method overloading means same method name with different parameters.
+'''
+
+#Method of overriding 
+class animal():
+    def sound1(self):
+        print("Animal sound") 
+class dog(animal):
+    def sound2(self):
+        print("Dog Barks") 
+obj = dog()
+obj.sound1()
+obj.sound2()
+
+'''Method overriding means child class redefines a method from the parent class.'''
+
+
+'''5.ABSTRACT METHOD IN OOPS
+
+Abstract means hiding the implementation details and showing only functionality.
+Acheived abstract using ABC in python
+
+'''
+from abc import ABC,abstractmethod
+
+from numpy import number
+class shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass 
+    class square(number):
+        def __init__(self, side):
+            self.side = side
+
+        def area(self):
+            return self.side ** 2
+sq=number(4)
+print(sq.area()) 
+
+
