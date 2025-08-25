@@ -1,0 +1,56 @@
+''' 🔰2.ENCAPSULATION IN OOPS
+
+ENCAPSULATION IN PYTHON
+it is one method oops concept 
+encapslation means wrapping in a single unit is called encapsulation. and restricting direct access to variables.
+In this encapsulation there are differnt types.
+1.Public - accessible form anywhere
+2.Private - Accessible within the class and its subclasses 
+3.protected -Accessible only within the class.
+
+'''
+#Example1 
+class Bank:
+    def __init__(self,):
+        self.balance = 1000       # Public
+        self._account_type = "Saving"  # Protected
+        self.__pin = 1234         # Private
+
+    def show(self):
+        print("Balance:", self.balance)
+        print("Account Type:", self._account_type)
+        
+
+b = Bank()
+b.show()
+print(b.balance) 
+print(b._account_type)     # Accessible
+##print(b.__pin)           # ❌ Error (Private)
+
+
+
+#Example2 of Encapsulation in Python
+class BankAccount:
+    def __init__(self, account_number, balance):
+        self.account_number = account_number
+        self.__balance = balance  # Private attribute
+
+    def deposit(self, amount):
+        self.__balance += amount
+        print(f"Deposited {amount}. New balance is {self.__balance}.")
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+            print(f"Withdrew {amount}. New balance is {self.__balance}.")
+        else:
+            print("Insufficient funds.")
+
+    def get_balance(self):
+        return self.__balance
+
+# Creating an object of BankAccount
+account = BankAccount("123456789", 2000)
+account.deposit(500)
+# account.withdraw(200)
+print(f"Account balance is {account.get_balance()}.")   
