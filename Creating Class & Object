@@ -1,0 +1,61 @@
+''' 🔰 1. CREATING CLASS & OBJECT EXAMPLES:'''
+#Basic creating class and object
+class myclass:
+    name="Btech"
+    age=21
+    brach="EEE"
+    city="Akkayapalem"
+#creating an object 
+a=myclass()
+print(a.name)
+print(a.age)
+print(f"hii my name is surendra i from {a.city} and my age is {a.age} and i am studing {a.brach} in {a.name} college")
+
+
+# mediumlevel to creating class and object 
+
+#creating class bu using constructor
+class student:
+    def __init__(self,name,age,branch,city):
+        self.name=name
+        self.age=age
+        self.branch=branch
+        self.city=city
+    def output(self):
+        print(f"hii my name is {self.name} i from {self.city} and my age is {self.age} and i am studing {self.branch} in btech college")
+a=student("surendra",21,"EEE","Akkayapalem")
+a.output() 
+
+#2. CREATING CLASS BY USING CONSTRUCTOR:
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+
+    def bark(self):
+        print(f"{self.name} BOOW BOWW iam a {self.breed}")
+d=Dog("Buddy", "Golden Retriever")
+d.bark()
+
+'''Interview questions on class and object and constructor:
+
+1.✅  What is a class in Python?
+a class is a blue print for creating an object defining ther properties and methods
+
+2.✅  What is an object in Python?
+An object is an instance of a class.
+
+3.✅  What is the difference between a class and an instance?
+A class is a blueprint for creating objects, while an instance is a specific object created from that class.
+
+4.✅  What is a constructor in Python?
+A constructor is a special method that is automatically called when an object is created. It is used to initialize the object's attributes.
+
+4. ✅ How do you create an object in Python?
+You create an object by calling the class name followed by parentheses. For example: obj = ClassName()
+
+5. ✅  What is the purpose of the self parameter in Python class methods?
+The self parameter refers to the instance of the class and is used to access the attributes and methods of the class.
+self → Represents current object of the class. 
+
+'''
